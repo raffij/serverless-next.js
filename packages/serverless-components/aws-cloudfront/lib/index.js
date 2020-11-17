@@ -273,7 +273,7 @@ const updateCloudFrontDistribution = async (cf, s3, distributionId, inputs) => {
     CacheBehaviors.Items.forEach((inputBehavior) => {
       const behaviorIndex = behaviorPaths.indexOf(inputBehavior.PathPattern);
       if (behaviorIndex > -1) {
-        // replace origin with new input configuration
+        // replace behavior with new input configuration
         behaviors.Items.splice(behaviorIndex, 1, inputBehavior);
       } else {
         behaviors.Items.push(inputBehavior);
